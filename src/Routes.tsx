@@ -1,15 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
-import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
-import { Login } from "./Screens/Login";
-import { Register } from "./Screens/Register";
-import { AuthParamList } from "./types/AuthParamList";
 import { Center } from "./Center";
-import { ActivityIndicator, AsyncStorage, Text } from "react-native";
+import { ActivityIndicator, AsyncStorage } from "react-native";
 import { AuthContext } from "./AuthProvider";
+import { AppTabs } from "./navigation/AppTabs";
+import { AuthStack } from "./navigation/AuthStack";
 interface RoutesProps {}
-
-const Stack = createStackNavigator<AuthParamList>();
 
 export const Routes = () => {
   const { user, login } = useContext(AuthContext);
@@ -37,33 +33,7 @@ export const Routes = () => {
   }
   return (
     <NavigationContainer>
-      {user ? (
-        <Center>
-          <Text>로그인 되었습니다.</Text>
-        </Center>
-      ) : (
-        <Stack.Navigator
-          // screenOptions={{
-          //   header: () => null,
-          // }}
-          initialRouteName="Login"
-        >
-          <Stack.Screen
-            name="Login"
-            component={Login}
-            options={{
-              headerTitle: "Sign Up",
-            }}
-          />
-          <Stack.Screen
-            name="Register"
-            component={Register}
-            options={{
-              headerTitle: "Sign In",
-            }}
-          />
-        </Stack.Navigator>
-      )}
+      {user ? <AppTabs /> : <AuthStack />}
     </NavigationContainer>
   );
 };

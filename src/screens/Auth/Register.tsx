@@ -1,8 +1,8 @@
 import React from "react";
-import { Center } from "../Center";
+import { Center } from "../../Center";
 import { Button, Text } from "react-native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { AuthParamList, AuthNavProps } from "../types/AuthParamList";
+import { AuthParamList, AuthNavProps } from "../../types/AuthParamList";
 import { RouteProp } from "@react-navigation/native";
 
 interface RegisterProps {}
