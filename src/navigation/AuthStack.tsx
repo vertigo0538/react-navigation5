@@ -1,7 +1,7 @@
 import React from "react";
-import { Login } from "./screens/Auth/Login";
-import { Register } from "./screens/Auth/Register";
-import { AuthParamList } from "./types/AuthParamList";
+import { Login } from "../screens/Auth/Login";
+import { Register } from "../screens/Auth/Register";
+import { AuthParamList } from "../types/AuthParamList";
 
 import { createStackNavigator } from "@react-navigation/stack";
 interface AuthStackProps {}
