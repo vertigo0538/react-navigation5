@@ -4,6 +4,7 @@ import { AppParamList } from "../types/AppParamList";
 import { Search } from "../screens/Search";
 import { AntDesign, Ionicons, EvilIcons } from "@expo/vector-icons";
 import { HomeStack } from "./HomeStack";
+import { SearchStack } from "./SearchStack";
 
 interface AppTabsProps {}
 const Tabs = createBottomTabNavigator<AppParamList>();
@@ -37,7 +38,7 @@ export const AppTabs: React.FC<AppTabsProps> = ({}) => {
       }}
     >
       <Tabs.Screen name="Home" component={HomeStack}></Tabs.Screen>
-      <Tabs.Screen name="Search" component={Search}></Tabs.Screen>
+      <Tabs.Screen name="Search" component={SearchStack}></Tabs.Screen>
     </Tabs.Navigator>
   );
 };
