@@ -6,6 +6,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { AuthContext } from "../AuthProvider";
 import { Text } from "react-native";
 import { Product } from "../components/Product";
+import { EditProduct } from "../components/EditProduct";
 
 interface HomeStackProps {}
 const Stack = createStackNavigator<HomeParamList>();
@@ -15,11 +16,29 @@ export const HomeStack: React.FC<HomeStackProps> = ({}) => {
     <Stack.Navigator initialRouteName="Feed">
       <Stack.Screen
         options={({ route }) => ({
+          headerTitle: `edit:${route.params.name}`,
+          headerRight: () => (
+            <TouchableOpacity
+              onPress={() => {
+                route.params.submit.current();
+              }}
+              style={{ paddingRight: 8 }}
+            >
+              <Text>Done</Text>
+            </TouchableOpacity>
+          ),
+        })}
+        name="EditProduct"
+        component={EditProduct}
+      />
+      <Stack.Screen
+        options={({ route }) => ({
           headerTitle: `product: ${route.params.name}`,
         })}
         name="Product"
         component={Product}
       />
+
       <Stack.Screen
         name="Feed"
         options={{

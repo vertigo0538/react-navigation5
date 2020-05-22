@@ -3,7 +3,7 @@ import { Center } from "../Center";
 import { FlatList } from "react-native-gesture-handler";
 import faker from "faker/locale/ko";
 import { Button } from "react-native";
-import { HomeNavProps } from "../types/HomeParamList";
+import { HomeStackNavProps } from "../types/HomeParamList";
 
 interface FeedProps {}
 
