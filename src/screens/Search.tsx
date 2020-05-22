@@ -3,10 +3,13 @@ import { Center } from "../Center";
 import { Text, Button, FlatList } from "react-native";
 import { Feed } from "../components/Feed";
 import faker from "faker";
+import { SearchStackNavProps } from "../types/SearchParamList";
 
 interface SearchProps {}
 
-export const Search: React.FC<SearchProps> = ({ navigation }) => {
+export const Search: React.FC<SearchProps> = ({
+  navigation,
+}: SearchStackNavProps<"Search">) => {
   const [show, setShow] = useState(false);
   return (
     <Center>

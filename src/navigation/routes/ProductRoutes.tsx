@@ -4,9 +4,19 @@ import { AuthContext } from "../../AuthProvider";
 import { Text } from "react-native";
 import { Product } from "../../components/Product";
 import { EditProduct } from "../../components/EditProduct";
+import { StackNavigationState, TypedNavigator } from "@react-navigation/native";
+import { HomeParamList } from "../../types/HomeParamList";
+import { SearchParamList } from "../../types/SearchParamList";
 
-export const ProductRoute = (Stack: any) => {
-  const { logout } = useContext(AuthContext);
+export const ProductRoute = (
+  Stack: TypedNavigator<
+    HomeParamList | SearchParamList,
+    StackNavigationState,
+    any,
+    any,
+    any
+  >
+) => {
   return (
     <>
       <Stack.Screen

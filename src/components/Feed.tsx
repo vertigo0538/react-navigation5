@@ -4,8 +4,11 @@ import { FlatList } from "react-native-gesture-handler";
 import faker from "faker/locale/ko";
 import { Button } from "react-native";
 import { HomeStackNavProps } from "../types/HomeParamList";
+import { SearchStackNavProps } from "../types/SearchParamList";
 
-interface FeedProps {}
+interface FeedProps {
+  navigation: any;
+}
 
 export const Feed: React.FC<FeedProps> = ({
   navigation,

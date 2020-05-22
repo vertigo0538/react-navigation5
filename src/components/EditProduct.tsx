@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { Center } from "../Center";
 import { Text, Alert } from "react-native";
 import { HomeStackNavProps } from "../types/HomeParamList";
+import { SearchStackNavProps } from "../types/SearchParamList";
 
 interface EditProductProps {}
 
@@ -11,7 +12,7 @@ function apiCall(x: any) {
 export const EditProduct: React.FC<EditProductProps> = ({
   navigation,
   route,
-}: HomeStackNavProps<"EditProduct">) => {
+}: HomeStackNavProps<"EditProduct"> | SearchStackNavProps<"EditProduct">) => {
   const [formState] = useState(1);
   const submit = useRef(() => {});
   submit.current = () => {
